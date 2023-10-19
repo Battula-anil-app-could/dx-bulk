@@ -1,0 +1,22 @@
+[package]
+name = "xbulk-wasm"
+version = "2.0.0"
+authors = ["Alessandro De Franceschi <info@defralcoding.it>"]
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[workspace]
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+[dependencies.xbulk]
+path = ".."
+
+[dependencies.dharitri-sc-wasm-adapter]
+version = "0.0.1.0"
